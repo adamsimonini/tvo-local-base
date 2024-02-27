@@ -1,0 +1,6 @@
+[submodule "services/learn-api"]
+	path = services/learn-api
+	url = git@github.com:adamsimonini/learn-api.git
+[submodule "services/learn-frontend"]
+	path = services/learn-frontend
+	url = git@github.com:adamsimonini/learn-frontend.git
