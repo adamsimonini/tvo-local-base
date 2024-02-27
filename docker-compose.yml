@@ -1,0 +1,36 @@
+services:
+  frontend:
+    build:
+      context: ./services/frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    # env_file:
+    #   - ./services/games-cdn/.env # Path to the .env file for local-games-cdn service
+    # command: sh -c "/usr/share/nginx/html/installGames.sh && nginx -g 'daemon off;'"
+  games-cdn:
+    build:
+      context: ./services/games-cdn
+      dockerfile: Dockerfile
+    container_name: games-cdn
+    env_file:
+      - ./services/games-cdn/.env # Path to the .env file for local-games-cdn service
+    volumes:
+      - ./services/games-cdn:/usr/share/nginx/html #nginx serves static files from dir html by default
+      - ~/.ssh:/root/.ssh:ro # Mount SSH lkey directory from host machine to containerstatic-nginx
+    command: sh -c "/usr/share/nginx/html/installGames.sh && nginx -g 'daemon off;'" # on container up, run script to load games, and then prevent the container from exiting with code 0
+  cms:
+    build:
+      context: ./services/cms
+      dockerfile: Dockerfile
+    container_name: cms
+    # env_file:
+    #   - ./services/games-cdn/.env # Path to the .env file for local-games-cdn service
+    # command: sh -c "/usr/share/nginx/html/installGames.sh && nginx -g 'daemon off;'"
+  api:
+    build:
+      context: ./services/api
+      dockerfile: Dockerfile
+    container_name: api
+    # env_file:
+    #   - ./services/games-cdn/.env # Path to the .env file for local-games-cdn service
+    # command: sh -c "/usr/share/nginx/html/installGames.sh && nginx -g 'daemon off;'"

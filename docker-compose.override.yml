@@ -1,0 +1,8 @@
+services:
+    nginx-proxy:
+        image: jwilder/nginx-proxy # reverse proxy service
+        container_name: nginx-proxy
+        ports:
+            - '80:80'
+        volumes:
+            - /var/run/docker.sock:/tmp/docker.sock:ro # allows the NGINX proxy container to communicate with the Docker daemon on the host system like so: dockerDaemon/nginxProxy (ro = readOnly)

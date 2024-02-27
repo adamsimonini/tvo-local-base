@@ -1,6 +1,9 @@
 [submodule "services/learn-api"]
-	path = services/learn-api
-	url = git@github.com:adamsimonini/learn-api.git
+    path = services/learn-api
+    url = git@github.com:adamsimonini/learn-api.git
+    ignore = dirty
+
 [submodule "services/learn-frontend"]
-	path = services/learn-frontend
-	url = git@github.com:adamsimonini/learn-frontend.git
+    path = services/learn-frontend
+    url = git@github.com:adamsimonini/learn-frontend.git
+    ignore = dirty
