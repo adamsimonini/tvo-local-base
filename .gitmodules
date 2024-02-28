@@ -1,9 +1,9 @@
 [submodule "services/learn-api"]
     path = services/learn-api
     url = git@github.com:adamsimonini/learn-api.git
-    ignore = none # Defines under what circumstances git status and the diff family show a submodule as modified. The following values are supported:
+    ignore = dirty # ignore parameter defines under what circumstances git status and the diff family show a submodule as modified. The following values are supported:
 
 [submodule "services/learn-frontend"]
     path = services/learn-frontend
     url = git@github.com:adamsimonini/learn-frontend.git
-    ignore = none
+    ignore = dirty
