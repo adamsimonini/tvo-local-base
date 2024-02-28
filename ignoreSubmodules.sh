@@ -20,3 +20,5 @@ for repo_dir in */; do
         echo "Skipping $repo_dir - Not a git repository"
     fi
 done
+
+# made another change
